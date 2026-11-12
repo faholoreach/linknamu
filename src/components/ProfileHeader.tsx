@@ -8,7 +8,7 @@ export default function ProfileHeader({ name, bio, image }: Profile) {
         <img
           src={image}
           alt={`${name} 프로필 사진`}
-          className="h-40 w-40 rounded-full object-cover ring-2 ring-neutral-300 dark:ring-neutral-700"
+          className="h-[150px] w-[150px] rounded-full object-cover ring-4 ring-white/80 shadow-[0_18px_40px_rgba(120,90,150,0.28)] dark:ring-white/15 dark:shadow-[0_18px_40px_rgba(0,0,0,0.5)]"
         />
       ) : (
         <div
@@ -18,8 +18,10 @@ export default function ProfileHeader({ name, bio, image }: Profile) {
           {name.charAt(0)}
         </div>
       )}
-      <h1 className="mt-4 text-xl font-bold">{name}</h1>
-      <p className="mt-1 text-neutral-600 dark:text-neutral-400">{bio}</p>
+      <h1 className="mt-6 text-2xl font-bold tracking-tight">{name}</h1>
+      <p className="mt-2 text-balance text-sm leading-relaxed text-[var(--muted)]">
+        {bio}
+      </p>
     </header>
   );
 }

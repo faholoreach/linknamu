@@ -3,19 +3,38 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #3b3340;
+  --muted: #7d7285;
+  /* 연보라 → 연한 살구 */
+  --bg-from: #ece4fb;
+  --bg-via: #f8e9f1;
+  --bg-to: #ffe5d3;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --foreground: #f1eaf5;
+  --muted: #b3a6bd;
+  --bg-from: #1f1a2e;
+  --bg-via: #2a2036;
+  --bg-to: #3a2a33;
+}
+
+html {
+  min-height: 100%;
 }
 
 body {
+  min-height: 100vh;
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(
+    160deg,
+    var(--bg-from) 0%,
+    var(--bg-via) 50%,
+    var(--bg-to) 100%
+  );
+  background-attachment: fixed;
+  font-family: var(--font-rounded), "Apple SD Gothic Neo", "Malgun Gothic",
+    system-ui, sans-serif;
 }
 
 @layer utilities {
