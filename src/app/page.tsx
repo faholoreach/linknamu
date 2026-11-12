@@ -1,4 +1,4 @@
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 import ProfileHeader from "@/components/ProfileHeader";
 import ThemeToggle from "@/components/ThemeToggle";
 import { links, profile } from "@/data/profile";
@@ -16,13 +16,7 @@ export default function Home() {
       </div>
 
       {/* 링크 카드 목록 (세로 배치) */}
-      <ul className="mt-12 flex flex-col gap-4">
-        {links.map((link) => (
-          <li key={link.id}>
-            <LinkCard {...link} />
-          </li>
-        ))}
-      </ul>
+      <LinkList links={links} />
     </main>
   );
 }
